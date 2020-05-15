@@ -1,8 +1,10 @@
 # use KDUX base Rails image, configure only project-specific items here
-FROM singlecellportal/rails-baseimage:1.0.2
+FROM singlecellportal/rails-baseimage:1.0.3
 
 # Set ruby version
-RUN bash -lc 'rvm --default use ruby-2.5.7'
+RUN bash -lc 'rvm get stable'
+RUN bash -lc 'rvm install 2.7.1'
+RUN bash -lc 'rvm --default use ruby-2.7.1'
 RUN bash -lc 'rvm rvmrc warning ignore /home/app/webapp/Gemfile'
 
 # Set up project dir, install gems, set up script to migrate database and precompile static assets on run
@@ -24,4 +26,4 @@ COPY nginx.conf /etc/nginx/nginx.conf
 RUN rm -f /etc/service/nginx/down
 
 # Compile native support for passenger for Ruby 2.5
-RUN passenger-config build-native-support
+RUN sudo -u app -Hs passenger-config build-native-support

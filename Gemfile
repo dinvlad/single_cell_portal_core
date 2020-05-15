@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.5.7'
+ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.4.2'
@@ -87,5 +87,5 @@ gem 'sentry-raven'
 gem 'travis'
 gem 'rubyzip'
 gem 'time_difference'
-gem 'tcell_agent'
+# gem 'tcell_agent'
 gem 'sys-filesystem', require: 'sys/filesystem'

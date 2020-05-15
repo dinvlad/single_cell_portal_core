@@ -17,6 +17,10 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# silence Ruby 2.7 deprecation warnings
+ActiveSupport::Deprecation.silenced = true
+Warning[:deprecated] = false
+
 module SingleCellPortal
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
