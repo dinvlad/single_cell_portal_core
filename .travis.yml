@@ -18,3 +18,4 @@ before_install:
   - sudo mv vault /usr/local/bin
 script:
   - bin/load_env_secrets.sh -p secret/kdux/scp/staging/scp_config.json -s secret/kdux/scp/staging/scp_service_account.json -e test -n single-cell-portal-staging
+
